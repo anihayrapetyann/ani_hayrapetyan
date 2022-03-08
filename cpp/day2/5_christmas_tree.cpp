@@ -39,7 +39,7 @@ int main () {
                         if (j < i) {
                                 cout << "*";
                         }
-                        else{
+                        else {
                                 cout << " ";
                         }
                         j--;
