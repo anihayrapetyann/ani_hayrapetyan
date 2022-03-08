@@ -11,7 +11,7 @@ int main () {
 	cin >> oper;
 	cout << "Enter the second number\n";
         cin >> secondnumber;
-        switch (oper) {
+        switch ( oper ) {
                 case '+':
                         cout << firstnumber << '+' << secondnumber << '=' <<firstnumber + secondnumber << endl;
 			break;
@@ -24,6 +24,10 @@ int main () {
 
                         break;
 		case '/':
+			if ( secondnumber == 0 ) { 
+				cout << "Division is impossible.\n";
+				break;
+			}
                         cout << firstnumber << '/' << secondnumber << '=' <<firstnumber / secondnumber << endl;
 
                         break;
