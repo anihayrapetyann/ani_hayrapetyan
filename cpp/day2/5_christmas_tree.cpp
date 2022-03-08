@@ -9,9 +9,9 @@ int main () {
 
 	cout << "This is my first triangle\n";
 	int i = height;
-	while (i > 0){
+	while (i > 0) {
 		int j = 1;
-		while (j <= i){
+		while (j <= i) {
 			cout << "*";
 			j++;
 		}		     
@@ -21,9 +21,9 @@ int main () {
 
 	cout << endl << "this is my second triangle\n";
 	i = 1;
-	while (i <= height){
+	while (i <= height) {
                int j = 1;
-               while (j <= i){
+               while (j <= i) {
                         cout << "*";
                         j++;
                 }
@@ -33,10 +33,10 @@ int main () {
 
 	cout << endl << "this is my third triangle\n";
         i = 1;
-        while (i <= height){
+        while (i <= height) {
                 int j = height;
-                while (j >= 0){
-                        if(j < i){
+                while (j >= 0) {
+                        if (j < i) {
                                 cout << "*";
                         }
                         else{
@@ -52,12 +52,12 @@ int main () {
 	i = 1;
 	while (i <= height) {
 		int j = 1;
-		while(j <= height - i){
+		while (j <= height - i) {
 			cout <<"  ";
 			j++;
         	}
 		j = 0;
-        	while(j != 2 * i - 1){
+        	while (j != 2 * i - 1) {
            		 cout << "* ";
            		 ++j;
 		}
@@ -65,7 +65,6 @@ int main () {
 		i++;
 		j = 0;
 	}
-
 	return 0;
 }
 

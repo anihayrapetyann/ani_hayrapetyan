@@ -17,11 +17,9 @@ int main () {
 			break;
 		case '-':
                         cout << firstnumber << '-' << secondnumber << '=' <<firstnumber - secondnumber << endl;
-
                         break;
 		case '*':
                         cout << firstnumber << '*' << secondnumber << '=' <<firstnumber * secondnumber << endl;
-
                         break;
 		case '/':
 			if ( secondnumber == 0 ) { 
@@ -29,9 +27,7 @@ int main () {
 				break;
 			}
                         cout << firstnumber << '/' << secondnumber << '=' <<firstnumber / secondnumber << endl;
-
                         break;
-                
                 default:
                         cout << "Please, try again";
                         break;
