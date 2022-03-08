@@ -5,42 +5,28 @@ int main () {
         char letter;
         cout << "Input the letter \n";
         cin >> letter;
-        switch (letter) {
-                case 'a':
-                        cout << "The letter is vowel \n";
-                        break;
-                case 'e':
-                        cout << "The letter is vowel \n";
-                        break;
-                case 'i':
-                        cout << "The letter is vowel \n";
-                        break;
-                case 'u':
-                        cout << "The letter is vowel \n";
-                        break;
-                case 'o':
-                        cout << "The letter is vowel \n";
-                        break;
-                case 'A':
-                        cout << "The letter is vowel \n";
-                        break;
-                case 'E':
-                        cout << "The letter is vowel \n";
-                        break;
-		case 'I':
-                        cout << "The letter is vowel \n";
-                        break;
-		case 'U':
-                        cout << "The letter is vowel \n";
-                        break;
-		case 'O':
-                        cout << "The letter is vowel \n";
-                        break;
-
-                default:
-                        cout << "The letter is consonant\n";
-                        break;
-        }
+	if (('a' <= letter && letter <= 'z') || ('A' <= letter && letter <= 'Z')) {
+        	switch (letter) {
+                	case 'a':
+                	case 'e':
+			case 'i':
+                	case 'u':
+                	case 'o':
+                	case 'A':
+                	case 'E':
+			case 'I':
+			case 'U':
+			case 'O':
+                        	cout << "The letter is vowel \n";
+                        	break;
+               		default:
+                        	cout << "The letter is consonant\n";
+                        	break;
+       		 }
+	}
+	else {
+		cout << "The character is not an alphabet\n";	
+	}
         return 0;
 }
 
