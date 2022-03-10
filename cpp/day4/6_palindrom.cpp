@@ -10,7 +10,7 @@ char lowerToUpper (char letter) {
 	return letter;
 }
 
-int isPalindrome (string word) {
+bool isPalindrome (string word) {
 	int size = 0;
 	int i;
 	for (i = 0; word [i] != '\0'; i++) {
@@ -19,11 +19,11 @@ int isPalindrome (string word) {
 	for (i = 0; i < size / 2; i++) {
                 if (lowerToUpper (word [i]) != lowerToUpper (word [size - i -1])) {
 			cout << "The word is not palindrome \n";
-			return 0;
+			return false;
 		}
 	}
 	cout << "The word is palindrome \n";
-	return 1;
+	return true;
 }
 
 int main () {

@@ -2,14 +2,19 @@
 #include <stdlib.h>
 using namespace std;
 
+double rndNumber (int a, int b) {
+        int random = rand () % (10 * b - 10 * a + 1) + 10 * a;
+        return random / 10.0;
+}
+
 int main () {
 	int i, j, m, n;
 	float arr [100];
-	cout << "Enter size of array (1 to 100): ";
+	cout << "Enter size of array. ";
 	cin >> n;
 	cout << endl;
 	for (i = 0; i < n; i++) {
-		arr [i] = rand () % 100;
+		arr [i] = rndNumber (-100, 100);
 	}
 	cout << "Elements of array are - ";
 	for (i = 0; i < n; i++) {
