@@ -8,7 +8,7 @@ int rndNumber () {
 }
 
 int main () {
-	const int SIZE = 4;
+	const int SIZE = 5;
 	int a[SIZE][SIZE];
 	for (int i = 0; i < SIZE; i++) {
 		for (int j = 0; j < SIZE; j++) {
@@ -18,7 +18,12 @@ int main () {
 	cout << "Matrix:\n";
 	for (int i = 0; i < SIZE; i++) {
 		for (int j = 0; j < SIZE; j++) {
-			cout << a[i][j] << " ";
+			if ( a[i][j] < 10) {
+				cout << a[i][j] << "  ";
+			}
+			else {
+				cout << a[i][j] << " ";
+			}
 		}
 		cout << endl;
 	}
@@ -32,36 +37,51 @@ int main () {
 	int sumLeft = 0;
 	int sumBottom = 0;
 	int sumRight = 0;
+
 	for (int i = 0; i < SIZE; i++) {
-                for (int j = 0; j < SIZE; j++) {
-			if (i != j && i + j != SIZE - 1) {
-        			if (i < j) {
+		for (int j = 0; j < SIZE; j++) {
+			if (i != j ) {
+				if (i < j) {
 					sumTopRight += a[i][j];
-				}     
+				}
 				if (i > j) {
 					sumBottomLeft += a[i][j];
 				}
-				if (i == 0 || j == 0) {
+			}
+		}
+	}
+
+	for (int i = 0; i < SIZE; i++) {
+		for (int j = 0; j < SIZE; j++) {
+			if (i + j != SIZE - 1) {
+				if (i + j < SIZE -1) {
 					sumTopLeft += a[i][j];
 				}
-				if (i == SIZE - 1 || j == SIZE - 1) {
+				if (i + j >= SIZE) {
 					sumBottomRight += a[i][j];
 				}
-				if (i < j && j != SIZE - 1) {
+			}
+		}
+	}
+	for (int i = 0; i < SIZE; i++) {
+		for (int j = 0; j < SIZE; j++) {
+			if (i != j && i + j != SIZE - 1) {
+				if (i < j && i + j < SIZE - 1) {
 					sumTop += a[i][j];
 				}
-				if (i > j && j == 0) {
+				if (i > j && i + j < SIZE - 1) {
 					sumLeft += a[i][j];
 				}
-				if (i == SIZE - 1) {
+				if (i > j && i + j >= SIZE - 1) {
 					sumBottom += a[i][j];
 				}
-				if (j == SIZE - 1) {
+				if (i < j && i + j >= SIZE - 1) {
 					sumRight += a[i][j];
 				}
 			}
 		}
 	}
+
 	cout << "Sum of numbers in the top right triangle: " << sumTopRight << endl;
 	cout << "Sum of numbers in the bottom left triangle: " << sumBottomLeft << endl;
 	cout << "Sum of number in the top left triangle: " << sumTopLeft << endl;
