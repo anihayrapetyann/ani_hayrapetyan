@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+void sum1 (int *a, int *b, int *sum) {
+	*sum = *a + *b;
+	cout << "sum 1 = " << *sum << endl;
+}
+
+void sum2 (int &a, int &b, int &sum) {
+	sum = a + b;
+	cout << "sum 2 = " << sum << endl;
+}
+
+void sum3 (int a, int b, int &sum) {
+	sum = a + b;
+	cout << "sum 3 = " << sum << endl;
+}
+void sum4 (int &a, int *b, int &sum) {
+	sum = a + *b;
+	cout << "sum 4 = " << sum << endl;
+}
+void sum5 (int *a, int *b, int &sum) {
+	sum = *a + *b;
+	cout << "sum 5 = " << sum << endl;
+}
+
+int main () {
+	int a = 5;
+	int b = 10;
+	int sum;
+	sum1 (&a, &b, &sum);
+	sum2 (a, b, sum);
+	sum3 (a, b, sum);
+	sum4 (a, &b, sum);
+	sum5 (&a, &b, sum);
+
+	return 0;
+}
