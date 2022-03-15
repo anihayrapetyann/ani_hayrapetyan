@@ -1,32 +1,46 @@
 #include <iostream>
 using namespace std;
 
+void reverse (int *ptr, int *number) {
+	int *p = ptr;
+	int *firstPtr = ptr;
+        int *lastPtr = ptr + *number - 1;
+        while (p < ptr + *number - 1 ) {
+                int tmp;
+                if (firstPtr < lastPtr) {
+                        tmp = *lastPtr;
+                        *lastPtr = *firstPtr;
+                        *firstPtr = tmp;
+                        firstPtr++;
+                        lastPtr--;
+                }
+                *(p++);
+	} 
+	p = ptr;
+	cout << "The elements of reversed array are: ";
+	while (p < ptr + *number) {
+		cout << *(p++) << " ";
+	}
+}
+
 int main () {
-	int size = 10;
-	int array[size];
-	int i;
-	int *firstPtr = array;
-	int *lastPtr = array + size - 1;
-	cout << "Enter the elements of array:\n";
-	for (int i = 0; i < size; i++) {
-		cin >> array[i];
-	}
+	int number;
+        cout << "Enter the number of elements\n";
+        cin >>number;
+        int *arr = new int[number];
+        int *p = arr;
+        cout << "Enter the elements of array\n";
+        while (p < arr + number) {
+                cin >> *p++;
+        }
+        p = arr;
+        cout << "The elements of array: ";
+        while (p < arr + number) {
+                cout <<  *p++ << " ";
+        }
+        cout << endl;
+	reverse (arr, &number);
 	cout << endl;
-	i = 0;
-	while (i <= size/2) {
-		int tmp;
-		if (firstPtr < lastPtr) {
-			tmp = *lastPtr;
-			*lastPtr = *firstPtr;
-			*firstPtr = tmp;
-			firstPtr++;
-			lastPtr--;
-		}
-		i++;
-	}
-	for (  i = 0; i < size; i++) {
-		cout << array[i] << endl;
-	}
 
 return 0;
 }

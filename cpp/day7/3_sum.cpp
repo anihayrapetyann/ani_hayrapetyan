@@ -1,30 +1,32 @@
 #include <iostream>
 using namespace std;
 
-void sumOfArr (int *ptr, int len) {
+void sumOfArr (int *ptr, int *len) {
 	int sum = 0;
 	int *p = ptr;
-	while (p < ptr + len) {
+	while (p < ptr + *len) {
 		sum+= *(p++);
 	}
 	cout << "Sum of array elements is: " << sum << endl;
 }
 
 int main () {
-	int arr[6];
-	int i;
+	int number;
+	cout << "Enter the number of elements\n";
+	cin >>number;
+	int *arr = new int[number];
+	int *p = arr;
 	cout << "Enter the elements of array\n";
-	for ( i = 0; i < 6; i++) {
-		cin >> arr[i];
+	while (p < arr + number) {
+		cin >> *p++;
 	}
-	cout << "Array elements are: ";
-	for (i = 0; i < 6; i++) {
-		cout << arr[i] << " ";
+	p = arr; 
+	cout << "The elements of array: ";
+	while (p < arr + number) {
+                cout <<  *p++ << " ";
 	}
 	cout << endl;
-	int *ptr;
-	ptr = arr;
-	sumOfArr (ptr, 6);
+	sumOfArr (arr, &number);
 
 	return 0;
 }

@@ -25,8 +25,12 @@ void sum5 (int *a, int *b, int &sum) {
 }
 
 int main () {
-	int a = 5;
-	int b = 10;
+	int a;
+	int b;
+	cout << "Enter the first number\n";
+	cin >> a;
+	cout << "Enter the second number\n";
+	cin >> b;
 	int sum;
 	sum1 (&a, &b, &sum);
 	sum2 (a, b, sum);

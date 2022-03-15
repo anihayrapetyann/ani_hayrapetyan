@@ -5,17 +5,17 @@ void swap (int *a, int *b) {
 	int tmp = *a;
 	*a = *b;
 	*b = tmp;
-	cout << "a = " << *a << "  b =  " << *b << endl;
+	cout << "a = " << *a << endl;
+	cout <<  "b = " << *b << endl;
 }
 
 int main () {
-	int a;
-	int b;
-	cout << "Enter the first number\n";
+	int a, b;
+	cout << "a = ";
 	cin >> a;
-	cout << "Enter the second number\n";
+	cout << "b = ";
 	cin >> b;
-	cout << "a = " << a << "  b =  " << b << endl;
+	cout << "After swap:\n";
 	swap (&a, &b);
 
 	return 0;
