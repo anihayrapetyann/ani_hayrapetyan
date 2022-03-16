@@ -2,6 +2,7 @@
 #include <random>
 #include <ctime>
 #include "../my_lib/my_sorting.h"
+
 using namespace std;
 
 mt19937 gen (time(0));
@@ -11,21 +12,6 @@ int myGenerator (int a = 1, int b = 20) {
 	return rand;
 }
 
-/*void sort_min_max (int** matrix, int height, int width) {
-	for (int* ptr = *matrix; ptr < *matrix + width; ptr++) {
-		for (int** fpptr = matrix; fpptr < matrix + height - 1; fpptr++) {
-			for (int** spptr = fpptr + 1; spptr < matrix + height; spptr++) {
-				int a = *(*fpptr + (ptr - *matrix));
-				int b = *(*spptr + (ptr - *matrix));
-				if (a > b) { 
-					*(*fpptr + (ptr - *matrix)) = b;
-					*(*spptr + (ptr - *matrix)) = a;
-				}
-			}
-		}
-	}
-}
-*/
 int main() {
 	int n, m;
 	cout << "Enter the hight of array\n";
