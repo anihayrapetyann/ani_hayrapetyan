@@ -21,7 +21,6 @@ int main() {
 		for (int j = 0; j < SIZE; j++) {
 			matrix_1[i][j] = rndNumber ();
 			matrix_2[i][j] = rndNumber ();
-			matrix_3[i][j] = rndNumber ();
 		}
 	}
 
