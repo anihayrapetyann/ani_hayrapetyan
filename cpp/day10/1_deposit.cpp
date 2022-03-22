@@ -57,7 +57,7 @@ int main (int argc, char* argv[]) {
 		}
 		if (k + 1 < 10) {
 		 	cout << "   "  << day << "/ " 
-				<< "0" << k+1<< "/" << " " 
+				<< "0" << k + 1 << "/" << " " 
 				<< year << " " << "     |       "
 				<< deposit << "      |      " 
 				<< current_deposit << "     |        "
@@ -66,7 +66,7 @@ int main (int argc, char* argv[]) {
 		}
 		if (k + 1 >= 10) {
 			cout << "   "  << day 
-				<< "/ " << k+1 << "/ " 
+				<< "/ " << k + 1 << "/ " 
 				<< year << " " << "     |       " 
 				<< deposit << "      |      " 
 				<< current_deposit << "     |        " 
