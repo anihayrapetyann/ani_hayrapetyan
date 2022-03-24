@@ -4,13 +4,14 @@
 using namespace std;
 
 int main() {
+	cout << "Enter some text\n";
 	string sentence = " ";
 	getline (cin, sentence);
 	string sentence_word [sentence.size()];
 	int x = 0;
 
 	for (int i = 0; sentence[i] != '\0'; i++ ) {
-		if('A' <= sentence[i] && sentence[i] <= 'Z') {
+		if ('A' <= sentence[i] && sentence[i] <= 'Z') {
 			sentence[i] = sentence[i] + ('a' - 'A');
 		}
 		if (sentence[i] == ' ') {
