@@ -1,0 +1,10 @@
+hello -> բարև 
+world -> աշխարհ
+I -> ես
+like -> սիրում
+programming -> ծրագրավորում
+pretty -> գեղեցիկ
+day -> օր
+go -> գնալ
+home -> տուն
+goodbye -> ցտեսություն
