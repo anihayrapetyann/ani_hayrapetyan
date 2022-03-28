@@ -93,9 +93,9 @@ int main(int argc, char* argv[]) {
 		cout << "Input second country: ";
 		cin >> second_country;
 		int x, y;
-        for (int i = 0; i < 11; i++) {
-            if (first_country == country[i].country_name) {
-                x = i;
+		for (int i = 0; i < 11; i++) {
+			if (first_country == country[i].country_name) {
+				x = i;
             }
             if (second_country == country[i].country_name) {
                 y = i;
