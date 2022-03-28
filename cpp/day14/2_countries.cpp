@@ -147,7 +147,7 @@ int main(int argc, char* argv[]) {
     
 	}
 	else {
-    cout << "Invalid command!\n";
+	    cout << "Invalid command!\n";
 	}
 
 	return 0;
