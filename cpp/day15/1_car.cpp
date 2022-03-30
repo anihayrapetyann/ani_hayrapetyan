@@ -68,7 +68,7 @@ int main() {
 	string choosen_filter;
 	cout << "How many filters do you want to choose? (1 - 7)\n";
 	cin >> n;
-	if (n > 7 || n < 1){
+	if (n > 7 || n < 1) {
 		cout << "Invalid input\n";
 		return 0;
 	}
@@ -76,7 +76,7 @@ int main() {
 	cin.ignore();
 	getline (cin, filter);
 	string words_from_string[n];
-    cout << "Input " << filter << " : ";
+	cout << "Input " << filter << " : ";
 	getline (cin, choosen_filter);
 		
 	for (int i = 0; choosen_filter[i] != '\0'; i++) {
