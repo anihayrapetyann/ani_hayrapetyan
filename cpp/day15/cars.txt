@@ -1,7 +1,9 @@
-toyota, 15000, 100, 2.5, automat, black
-toyota, 7000, 1000, 3.5, mechanic, white
-mersedes, 9000, 500, 2.3, automat, white 
-lada, 2000, 3000, 1.7, mechanic, red
-opel, 2500, 20000, 1.8, automat, blue
-opel, 5000, 5000, 2.2, mechanic, grey
-lexus, 20000, 20000, 4.0, automat, red
+toyota, corola, 15000, 100, 2, automatic, black
+toyota, corola, 7000, 1000, 3, mechanic, white
+mersedes, c-class, 9000, 500, 2, automatic, white 
+lada, niva, 2000, 3000, 1, mechanic, red
+opel, astra-g, 2500, 20000, 2, automatic, blue
+opel, zafira, 5000, 5000, 2, mechanic, grey
+lexus, gx470, 20000, 20000, 4, automatic, red
+lexus, gx470, 10000, 50000, 3, automatic, black
+lexus, gx430, 12000, 40000, 3, automatic, red
