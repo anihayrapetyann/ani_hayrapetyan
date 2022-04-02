@@ -1,0 +1,5 @@
+Armenia, Stepanakert, 4, 5, 20000, 28000, -, 1, -, 1, 3
+Valex, Stepanakert, 3, 4, 21000, 30000, 1, -, 1, 1, 5
+Paris, Yerevan, 5, 7, 40000, 52000, 2, 1, 1, 1, 4
+Mariott, Yerevan, 4, 5, 40000, 56000, 2, 2, 1, 3, 5
+Grant, Shushi, 4, 5, 15000, 20000, 1, -, -, 1, 5
