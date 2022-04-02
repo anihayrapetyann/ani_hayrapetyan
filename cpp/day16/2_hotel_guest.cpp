@@ -145,7 +145,7 @@ int main() {
 							break;
 						}
 						hotel[i].single_room--;
-            }
+			}
 		}
 	
 		cout << "If you want to book a room type <book>, else type <exit> : ";
