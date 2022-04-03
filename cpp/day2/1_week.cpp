@@ -1,11 +1,12 @@
 #include <iostream>
+
 using namespace std;
 
-int main () {
-	int order;
+int main (){
+	int week_number;
 	cout << "Enter the number of week (1-7) \n";
-	cin >> order;
-	switch (order) {
+	cin >> week_number;
+	switch (week_number) {
 		case 1:
 			cout << "Monday \n";
 			break;
