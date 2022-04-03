@@ -31,7 +31,7 @@ int main() {
 			break;
 		default:
 			cout << "Please, try again";
-		break;
+			break;
 	}
 
 	return 0;
