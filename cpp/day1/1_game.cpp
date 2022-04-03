@@ -1,28 +1,29 @@
 #include <iostream>
+
 using namespace std;
 
 int main () {
-	int n;
-	int m;
+	int input_number;
+	int guess_number;
         cout << "Input the number\n";
-        cin >> n;
+        cin >> input_number;
         cout << "Guess the number\n";
-        cin >> m;
+        cin >> guess_number;
 	do {    
-		if (m==n){
+		if (guess_number == input_number){
 			break;		
 		}
-		if (m>n) {
+		if (guess_number > input_number) {
 			cout << "Your number is bigger than mine\n";          
 		}               
 		else {
 			cout << "Your number is smaller than mine\n";
 		}            
-		cin >> m;
+		cin >> guess_number;
 	}   
-	while (m!=n); 	
-	if (m==n) {
-		cout << "excellent!\n You guessed the number\n";
+	while (guess_number != input_number); 	
+	if (guess_number == input_number) {
+		cout << "excellent!\nYou guessed the number\n";
    	}   	
 
 	return 0;

@@ -1,25 +1,21 @@
 #include <iostream>
+
 using namespace std;
 
-int main () {
-	int year=2022;
-        int i=4;
-	int n=0;
-	while(n<20){
+int main() {
+	int current_year = 2022;
+    int i = 4;
+	int j = 0;
+	cout << "The next 20 leap years are:\n";
+	while (j < 20) {
+        if (current_year % i == 0) {
+			cout << current_year << endl;
+			j++;	
+		}
+	current_year++;
+	}
 
-        if(year % i == 0){
- 	cout << year <<endl;
-	n++;	
-	
-}
-	year++;
-
-
-}
-
-
-
-return 0;
+	return 0;
 }
 
 

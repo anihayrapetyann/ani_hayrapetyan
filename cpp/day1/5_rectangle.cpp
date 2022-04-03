@@ -1,6 +1,8 @@
 #include <iostream>
+
 using namespace std;
-int main () {
+
+int main() {
 	int length;
 	int width;
 	int perimeter;
@@ -9,14 +11,12 @@ int main () {
 	cin >> length;
 	cout << "Input the width of rectangle\n";
 	cin >> width;
-        perimeter=(length + width) * 2;
+    perimeter = (length + width) * 2;
 	cout << "The perimeter of rectangle is " << perimeter <<endl;
-	area=length * width;
+	area = length * width;
 	cout << "the area of rectangle is " << area <<endl;
 	
-
-
-return 0;
+	return 0;
 }
 
 
