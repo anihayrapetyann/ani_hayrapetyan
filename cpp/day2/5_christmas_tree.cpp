@@ -27,27 +27,27 @@ int main() {
 		while (j <= i) {
 			cout << "*";
 			j++;
-        }
-        cout << endl;
-    	i++;
-    }
+		}
+		cout << endl;
+		i++;
+	}
 
 	cout << endl << "this is my third triangle\n";
-    i = 1;
+	i = 1;
 	while (i <= height) {
 		int j = height;
 		while (j >= 0) {
 			if (j < i) {
 				cout << "*";
-            }
-            else {
-                cout << " ";
+			}
+			else {
+				cout << " ";
 			}
 			j--;
-        }
-        cout << endl;
-        i++;
-    }
+	        }
+	        cout << endl;
+	        i++;
+	}
  
 	cout << endl << "this is my fourth triangle\n";
 	i = 1;
@@ -56,11 +56,11 @@ int main() {
 		while (j <= height - i) {
 			cout <<"  ";
 			j++;
-        }
+		}
 		j = 0;
-        while (j != 2 * i - 1) {
-       		 cout << "* ";
-       		 ++j;
+		while (j != 2 * i - 1) {
+			cout << "* ";
+			++j;
 		}
 		cout << endl;
 		i++;

@@ -9,7 +9,7 @@ int main() {
 	if (('a' <= letter && letter <= 'z') || ('A' <= letter && letter <= 'Z')) {
 		switch (letter) {
 			case 'a':
-        	case 'e':
+			case 'e':
 			case 'i':
 			case 'u':
 			case 'o':
