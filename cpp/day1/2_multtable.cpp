@@ -11,7 +11,7 @@ int main() {
         while (i <= 10) {
 		multiple = number * i;
         	cout << number << " * " << i << " = " << multiple <<endl;
-       	i++;  
+		i++;  
 	}
 
         return 0;
