@@ -9,15 +9,15 @@ void print ( string days ) {
 	cout << "The total number of days is " << days << endl; 
 }
 
-int main () {
-        int monthnumber;
-        cout << "Enter the number of month, to know the total number of its days \n";
-        cin >> monthnumber;
-        switch ( monthnumber ) {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
+int main() {
+    int month_number;
+    cout << "Enter the number of month, to know the total number of its days \n";
+    cin >> month_number;
+    switch ( month_number ) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
 		case 8:
 		case 10:
 		case 12:
@@ -32,11 +32,11 @@ int main () {
 		case 11:
 			print ("30");
 			break;
-
-                default:
+		default:
 			print ( "WARNING" );
-                        break;
-        }
-        return 0;
+            break;
+    }
+
+	return 0;
 }
 

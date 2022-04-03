@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 void print (char letter) {
@@ -16,21 +17,22 @@ void print (char letter) {
 			cout << "the letter is vowel\n";
 			break;
 		default:
-                        cout << "The letter is consonant\n";
-                        break;
+			cout << "The letter is consonant\n";
+			break;
 	}
 }
 
-int main () {
-        char letter;
-        cout << "Input the letter \n";
-        cin >> letter;
+int main() {
+    char letter;
+    cout << "Input the letter \n";
+    cin >> letter;
 	if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z')) {
 		print (letter);        
 	}
 	else {
 		cout << "The " << letter << " is not an alphabet\n";
-	} 
-        return 0;
+	}
+ 
+	return 0;
 }
 
