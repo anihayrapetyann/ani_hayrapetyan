@@ -19,7 +19,7 @@ int main () {
 	cin >> length;
 	cout << "Input the width of rectangle\n";
 	cin >> width;
-    p = perimeter (length, width);
+	p = perimeter (length, width);
 	cout << "The perimeter of rectangle is " << p << endl;
 	a = area (length, width);
 	cout << "the area of rectangle is " << a << endl;

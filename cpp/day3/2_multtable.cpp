@@ -8,15 +8,16 @@ int multiplicator (int a, int b) {
 
 int main() {
 	int num;
-    int m = 1;
-    int multiple = 1;
-    cout << "input the number ";
-    cin >> num;
-    while (m <= 10) {
-		multiple = multiplicator (num, m);
-        cout << num << " * " << m << " = " << multiple << endl;
-       	m++;  
+	int i = 1;
+	int multiple = 1;
+	cout << "input the number ";
+	cin >> num;
+	while (i <= 10) {
+		multiple = multiplicator (num, i);
+		cout << num << " * " << i << " = " << multiple << endl;
+		i++;  
 	}
+	
         return 0;
 }
 

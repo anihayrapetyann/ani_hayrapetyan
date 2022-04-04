@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 void print ( string days ) {
@@ -10,10 +11,10 @@ void print ( string days ) {
 }
 
 int main() {
-    int month_number;
-    cout << "Enter the number of month, to know the total number of its days \n";
-    cin >> month_number;
-    switch ( month_number ) {
+	int month_number;
+	cout << "Enter the number of month, to know the total number of its days \n";
+	cin >> month_number;
+	switch ( month_number ) {
 		case 1:
 		case 3:
 		case 5:
@@ -34,8 +35,8 @@ int main() {
 			break;
 		default:
 			print ( "WARNING" );
-            break;
-    }
+			break;
+	}
 
 	return 0;
 }
