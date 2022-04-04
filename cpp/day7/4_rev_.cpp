@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 void reverse (int *ptr, int *number) {
@@ -42,7 +43,7 @@ int main () {
 	reverse (arr, &number);
 	cout << endl;
 
-return 0;
+	return 0;
 }
 
 
