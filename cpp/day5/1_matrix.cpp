@@ -1,13 +1,14 @@
 #include <iostream>
 #include <random>
+
 using namespace std;
 
-int rndNumber () {
+int rndNumber() {
 	int random = rand () % 10 +1;
 	return random;
 }
 
-int main () {
+int main() {
 	const int SIZE = 5;
 	int a[SIZE][SIZE];
 	for (int i = 0; i < SIZE; i++) {
