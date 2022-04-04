@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
  
 void binary (int n) {
@@ -15,10 +16,10 @@ void binary (int n) {
 }
 
 int main () {
-	int n;	
+	int number;	
 	cout << "Enter the number\n";
-	cin >> n;
-   	binary (n);
+	cin >> number;
+   	binary (number);
 	cout << endl;
 
 	return 0;
