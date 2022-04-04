@@ -1,40 +1,34 @@
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
-int main () {
-	long long int seconds;
-	cin >> seconds;
-	int mod = seconds % 31556926;
-	long int year = 1970 + seconds / 31556926;
-	cout << mod << endl;
-	int months = 1 + mod /2629743;
-	mod = mod % 2629743;
-	int day;
-	day = mod / 86400;
-	mod = mod % 86400;
-	int hour = mod / 3600;
-	mod = mod % 3600;
-	int minutes = mod / 60;	
+int main() {
+    long int input_seconds;
+    cout << "input the number of seconds: ";
+    cin >> input_seconds;
 
-	switch (months) {
-		case 1:  cout << "Jan "; break;
-		case 2:  cout << "Feb "; break;
-		case 3:  cout << "Mar "; break;
-		case 4:  cout << "Apr "; break;
-		case 5:  cout << "May "; break;
-		case 6:  cout << "Jun "; break;
-		case 7:  cout << "Jul "; break;
-		case 8:  cout << "Aug "; break;
-		case 9:  cout << "Sep "; break;
-		case 10: cout << "Oct "; break;
-		case 11: cout << "Nov "; break;
-		case 12: cout << "Dec "; break;			
-	}
-	cout << day  << " ";
-	cout << year << " ";
-	cout << hour << ":";
-	cout << minutes << endl;
+    time_t seconds = input_seconds;
+    string date = ctime (&seconds);
+    string mm = "";
+    string day = "";
+    string time = "";
+    string yy = "";
+    for (int i = 0; date[i] != '\0'; i++) {
+        if (i > 3 && i < 7) {
+            mm += date[i];
+        }
+        else if (i > 7 && i < 10) {
+            day += date[i];
+        }
+        else if (i > 10 && i < 16) {
+            time += date[i];
+        }
+        else if (i > 19 && date[i] != '\0') {
+            yy += date[i];
+        }
+    }
+    cout << "date: " << mm << " " << day << " " <<  yy << " " << time << endl;
 
 	return 0;
 }
