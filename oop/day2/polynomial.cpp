@@ -29,7 +29,7 @@ using namespace std;
 		}
 	}
 
-	Polynomial Polynomial::Add(Polynomial b) {
+	Polynomial Polynomial::operator+(const Polynomial& b) const {
 		Polynomial a = *this; 
 		Polynomial c;
 
@@ -39,7 +39,12 @@ using namespace std;
 		return c;
 	}
 	
-	Polynomial Polynomial::Subtract(Polynomial b) {
+	Polynomial &Polynomial::operator+=(const Polynomial& b) {
+		*this = *this + b;
+		return *this;
+	}	
+
+	Polynomial Polynomial::operator-(const Polynomial& b) const {
 		Polynomial a = *this; 
 		Polynomial c;
 
@@ -48,8 +53,13 @@ using namespace std;
 			c._deg = c.Degree();
 			return c;
 		}
+	
+	Polynomial &Polynomial::operator-=(const Polynomial& b) {
+		*this = *this - b;
+		return *this;
+	}
 
-	Polynomial Polynomial::Multiply(Polynomial b) {
+	Polynomial Polynomial::operator*(const Polynomial& b) const {
 		Polynomial a = *this;
 		Polynomial c;
 
@@ -59,6 +69,11 @@ using namespace std;
 				c._deg = c.Degree();
 				 return c;
 		}
+
+	Polynomial &Polynomial::operator*=(const Polynomial& b) {
+		*this = *this * b;
+		return *this;
+	}
 
 	Polynomial Polynomial::MultiplyByNumber (int number) {
 		Polynomial a = *this;

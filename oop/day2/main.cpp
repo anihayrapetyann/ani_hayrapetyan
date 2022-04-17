@@ -11,8 +11,28 @@ int main() {
 	b.Set(5, 2); //5x^2
 	b.Set(-3, 5); //-3x^5
 
-	c = a.Subtract(b); // (3x^2 + 2x^4) - (5x^2 - 3x^5)
+	c = a + b; 
 	c.Print();
+	cout << endl;
+	
+	c = a - b;
+	c.Print();
+	cout << endl;
+	
+	c = a * b;
+	c.Print();
+	cout << endl;
+	
+	a += b;
+	a.Print();
+	cout << endl;
+	
+	a -= b;
+	a.Print();
+	cout << endl;
+
+	a *= b;
+	a.Print();
 	cout << endl;
 
 	c = a.MultiplyByNumber(2);
