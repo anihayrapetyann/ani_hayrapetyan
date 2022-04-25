@@ -1,25 +1,20 @@
 #include <iostream>
 #include <cassert>
-#include "./generic_list.h"
+#include "../day1/generic_list.h"
 
 using namespace std;
 
 template <class T>
 LinkedList<T>::LinkedList(){
     head = NULL;
+    count = 0;
 };
 
-/*template <class T>
-LinkedList<T>::~LinkedList(){
-     clear();
-};
-*/
 template <class T>
-void LinkedList<T>::clear(){
+void LinkedList<T>::Clear(){
     while (head->Next != NULL) {
         RemoveAtTheFront();
     }
-
 }
 
 template <class T>
@@ -29,64 +24,59 @@ void LinkedList<T>::PrintList() {
         head = head->Next;
     } 
 }
+template <class T>
+void LinkedList<T>::Print() {
+        cout << count << endl;      
+}
 
 template <class T>
+T& LinkedList<T>::operator[]( int index) {
+    int counter = 0;
+    Node<T>* current = this->head;
+    while (current != nullptr) {
+        if (counter == index){
+            return current->Value;
+        }
+        current = current->Next;
+        counter++;
+    }
+   return current->Value;
+}
+ 
+template <class T>
 void LinkedList<T>::AddAtTheFront(T newValue) {
-	Node<T>* newNode = new Node<T>();
-	newNode-> Value = newValue;
-	newNode->Next = head;
-	head = newNode;
+    head = new Node<T>(newValue, head);
+    count++;
 }
 
 template <class T>
 void LinkedList<T>::AddAtTheEnd(T newValue) {
-	Node<T>* newNode = new Node<T>();
-	newNode->Value = newValue;
-	newNode->Next = NULL;
 	if (head == NULL) {
-		head = newNode;
+        head = new Node<T>(newValue, head);
 		return;
 	}
 	Node<T>* last = head;
 	while (last->Next != NULL) {
 		last = last->Next;
 	}
-	last-> Next = newNode;
+    last->Next = new Node<T>(newValue);
+    count++;
 }
 
 template <class T>
-void LinkedList<T>::AddAt(T index, T newValue) {
-	
-/*    if (index == 0) 
-    {
-        AddAtTheFront(newValue);
-    }
-    else {
-        Node<T>* previous = this->head;
-        for (int i = 0; i < index - 1; i++)
-        {
-            previous = previous->Next;
-        }
- 
-        Node<T>* newNode = new Node<T>(newValue, previous->Next);
-        previous->Next = newNode;
-    }
-}
-  */      
-    
-    if(index == 0) {
+void LinkedList<T>::AddAt(T index, T newValue) { 
+    /*if(index == 0) {
 		AddAtTheFront(newValue);
 	}
-    else {
+    else */{
         Node<T>* prev = this->head;
         for (int i = 0; i < index - 1; i++) {
             prev = prev->Next;
         }
-	    Node<T>* newNode = new Node<T>();
-	    newNode->Value = newValue;
-	    newNode->Next = prev->Next;
+	    Node<T>* newNode = new Node<T>(newValue, prev->Next);
 	    prev->Next = newNode;
     }
+    count++;
 }
 
 template <class T>
@@ -100,38 +90,35 @@ void LinkedList<T>::RemoveAtTheFront() {
         head = head -> Next;
         delete(ptr);
     }
+    count--;
 }
 
 template <class T>
-void LinkedList<T>::RemoveAtTheEnd(){
-    Node<T>* previous = NULL;
-    Node<T>* ptr = head;
-    while (ptr -> Next != NULL) {
-        previous = ptr;
-        ptr = ptr -> Next;
-    }
-    delete ptr;
-    previous->Next = NULL;
-    return;
+void LinkedList<T>::RemoveAtTheEnd() {
+    RemoveAt(count - 1);
+    count--;
 }
 
 template <class T>
 void LinkedList<T>::RemoveAt(T index) {
     if (index == 0)
         RemoveAtTheFront();
-    else{
+    else {
     Node<T>* prev = this->head;
         for (int i = 0; i < index - 1; i++) {
             prev = prev->Next;
         }
-        class Node<T> *ptr = prev->Next;
-    if(prev->Next == NULL) {
-        cout << "\nGiven node is not present in Linked List";
-        return;
+    Node<T>toDelete = prev->Next;
+    prev->Next = toDelete->Next;
+    delete(toDelete);
+    count--;
+    return;
     }
-    prev->Next = prev->Next->Next;
-    delete(ptr);
-    return;}
+}
+
+template <class T>
+int LinkedList<T>::GetSize() {
+     return count;
 }
 
 template <class T>
@@ -145,15 +132,4 @@ int LinkedList<T>::GetElement(T index) {
         current = current->Next;
     }
     assert(0);
-}
-
-template <class T>
-int LinkedList<T>::Count() {
-    Node<T>* current = head;
-    int count = 0; 
-    while (head != NULL) {
-        count++;  
-        current = current->Next;
-    }
-    return count;
 }

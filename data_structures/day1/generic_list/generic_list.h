@@ -16,11 +16,13 @@ template <class T>
 class LinkedList {
 private:
     Node<T>* head;
+    T count;
 public:
     LinkedList();
     //~LinkedList();
-    void clear();
+    void Clear();
     void PrintList();
+    T& operator[]( int index); 
     void AddAtTheFront(T);
     void AddAtTheEnd(T);
     void AddAt(T, T);
@@ -28,7 +30,9 @@ public:
     void RemoveAtTheEnd();
     void RemoveAt(T);
     int GetElement(T);
-    int Count();
+    void Print();
+    int GetSize();
+    //friend ostream& operator << (ostream &out, const LinkedList<Type>& );
 };
 
 #endif
