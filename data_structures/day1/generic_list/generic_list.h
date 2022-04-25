@@ -6,33 +6,29 @@ class Node {
 public:
     T Value;
     Node<T>* Next;
+    Node(T value, Node<T>* Next = NULL){
+        this->Value = value;;
+        this ->Next = Next;
+    }
 };
 
 template <class T>
-void PrintList(Node<T>*);
-
-template <class T>
-void AddAtTheFront(Node<T>**, T);
-
-template <class T>
-void AddAtTheEnd(Node<T>**, T);
-
-template <class T>
-void AddAt(Node<T>*, T);
-
-template <class T>
-void RemoveAtTheFront(Node<T>*&);
-
-template <class T>
-void RemoveAtTheEnd(Node<T>*);
-
-template <class T>
-void RemoveAt(Node<T>*, Node<T>*);
-
-template <class T>
-int GetElement(Node<T>* head, T);
-
-template <class T>
-int Count(Node<T>*);
+class LinkedList {
+private:
+    Node<T>* head;
+public:
+    LinkedList();
+    //~LinkedList();
+    void clear();
+    void PrintList();
+    void AddAtTheFront(T);
+    void AddAtTheEnd(T);
+    void AddAt(T, T);
+    void RemoveAtTheFront();
+    void RemoveAtTheEnd();
+    void RemoveAt(T);
+    int GetElement(T);
+    int Count();
+};
 
 #endif

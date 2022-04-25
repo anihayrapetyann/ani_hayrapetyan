@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    Node<int>* head = new Node<int>();
+    /*Node<int>* head = new Node<int>();
     Node<int>* second = new Node<int>();
     Node<int>* third = new Node<int>();
 
@@ -27,6 +27,15 @@ int main() {
 
 	cout << "The number of nodes is " << Count(head) << endl;
 	cout << "The searched element is  " <<	GetElement(head, 2)<<endl;
-
+*/
+    LinkedList<int> list;
+    list.AddAtTheFront(5);
+   // cout << list.Count() << endl;
+    list.AddAtTheEnd(10);
+    list.AddAtTheEnd(15);
+    list.AddAt(2, 13);
+    //cout << endl << list.GetElement(2) << endl;
+    list.PrintList();
+    cout << list.Count() << endl;
     return 0;
 }
