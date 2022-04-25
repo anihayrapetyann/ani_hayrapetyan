@@ -1,7 +1,7 @@
 #ifndef _QUE_H_
 #define _QUE_H_
 
-#include "./generic_list.h"
+#include "../day1/generic_list.h"
 
 template <typename T>
 class Queue {

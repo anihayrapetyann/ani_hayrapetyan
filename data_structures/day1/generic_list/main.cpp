@@ -1,7 +1,7 @@
 #include <iostream>
 #include "./generic_list.h"
 #include "./generic_list.cpp"
-#include "../day1/queue.hpp"
+#include "./queue.hpp"
 using namespace std;
 
 int main() {

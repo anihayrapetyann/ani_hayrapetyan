@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cassert>
-#include "../day1/generic_list.h"
+#include "./generic_list.h"
 
 using namespace std;
 
