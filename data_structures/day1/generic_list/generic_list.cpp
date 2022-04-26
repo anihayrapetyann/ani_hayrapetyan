@@ -1,32 +1,109 @@
 #include <iostream>
-#include <cassert>
-#include "./generic_list.h"
+#include "generic_list.h"
 
 using namespace std;
 
 template <class T>
-LinkedList<T>::LinkedList(){
+LinkedList<T>::LinkedList() {
     head = NULL;
     count = 0;
+}
+
+template<class T>
+LinkedList<T>::~LinkedList() {
+    Node<T>* current = head;
+    while( current != NULL ) {
+        Node<T>* Next = current->Next;
+        delete current;
+        current = Next;
+    }
+    head = NULL;
 };
 
 template <class T>
-void LinkedList<T>::Clear(){
-    while (head->Next != NULL) {
-        RemoveAtTheFront();
+void LinkedList<T>::AddAt(T index, T newValue) { 
+   if (index == 0) {
+		head = new Node<T>(newValue, head);
+	}
+    else {
+        Node<T>* prev = this->head;
+        for (int i = 0; i < index - 1; i++) {
+            prev = prev->Next;
+        }
+	    Node<T>* newNode = new Node<T>(newValue, prev->Next);
+	    prev->Next = newNode;
     }
+    count++;
 }
 
 template <class T>
-void LinkedList<T>::PrintList() {
-    while (head != NULL) {
-        cout << head->Value << endl;
-        head = head->Next;
-    } 
+void LinkedList<T>::AddAtTheFront(T newValue) {
+    AddAt(0, newValue);
 }
+
 template <class T>
-void LinkedList<T>::Print() {
-        cout << count << endl;      
+void LinkedList<T>::AddAtTheEnd(T newValue) {
+    AddAt(count, newValue);
+}
+
+template <class T>
+void LinkedList<T>::RemoveAt(T index) {
+    if (index == 0){
+        Node<T> *ptr = head;
+        head = head -> Next;
+        delete ptr;
+    }
+    else {
+    Node<T>* prev = this->head;
+        for (int i = 0; i < index - 1; i++) {
+            prev = prev->Next;
+        }
+    Node<T>* toDelete = prev->Next;
+    prev->Next = toDelete->Next;
+    delete toDelete;
+    }
+    count--;
+}
+
+template <class T>
+void LinkedList<T>::RemoveAtTheFront() {
+    RemoveAt(0);
+}
+
+template <class T>
+void LinkedList<T>::RemoveAtTheEnd() {
+    RemoveAt(count - 1);
+}
+
+
+template <class T>
+int LinkedList<T>::GetSize() {
+     return count;
+}
+
+template<class T>
+ostream& operator << (ostream &out, const LinkedList<T>& list) {
+    Node<T>* temp;
+    temp = list.head;
+    while(temp != NULL) {
+        out << temp->Value << " ";
+        temp = temp->Next;
+    }
+    out << endl;
+    return out;
+}
+
+template <class T>
+int LinkedList<T>::GetElement(T index) {
+    Node<T>* current = head;
+    int count = 0;
+    while (current != NULL) {
+        if (count == index)
+            return (current->Value);
+        count++;
+        current = current->Next;
+    }
+    return 0;
 }
 
 template <class T>
@@ -41,95 +118,4 @@ T& LinkedList<T>::operator[]( int index) {
         counter++;
     }
    return current->Value;
-}
- 
-template <class T>
-void LinkedList<T>::AddAtTheFront(T newValue) {
-    head = new Node<T>(newValue, head);
-    count++;
-}
-
-template <class T>
-void LinkedList<T>::AddAtTheEnd(T newValue) {
-	if (head == NULL) {
-        head = new Node<T>(newValue, head);
-		return;
-	}
-	Node<T>* last = head;
-	while (last->Next != NULL) {
-		last = last->Next;
-	}
-    last->Next = new Node<T>(newValue);
-    count++;
-}
-
-template <class T>
-void LinkedList<T>::AddAt(T index, T newValue) { 
-    /*if(index == 0) {
-		AddAtTheFront(newValue);
-	}
-    else */{
-        Node<T>* prev = this->head;
-        for (int i = 0; i < index - 1; i++) {
-            prev = prev->Next;
-        }
-	    Node<T>* newNode = new Node<T>(newValue, prev->Next);
-	    prev->Next = newNode;
-    }
-    count++;
-}
-
-template <class T>
-void LinkedList<T>::RemoveAtTheFront() {
-    if (head == NULL) {
-        cout << "List is empty\n";
-        return;
-    }
-    else {
-        class Node<T> *ptr = head;
-        head = head -> Next;
-        delete(ptr);
-    }
-    count--;
-}
-
-template <class T>
-void LinkedList<T>::RemoveAtTheEnd() {
-    RemoveAt(count - 1);
-    count--;
-}
-
-template <class T>
-void LinkedList<T>::RemoveAt(T index) {
-    if (index == 0)
-        RemoveAtTheFront();
-    else {
-    Node<T>* prev = this->head;
-        for (int i = 0; i < index - 1; i++) {
-            prev = prev->Next;
-        }
-    Node<T>toDelete = prev->Next;
-    prev->Next = toDelete->Next;
-    delete(toDelete);
-    count--;
-    return;
-    }
-}
-
-template <class T>
-int LinkedList<T>::GetSize() {
-     return count;
-}
-
-template <class T>
-int LinkedList<T>::GetElement(T index) {
-    Node<T>* current = head;
-    int count = 0;
-    while (current != NULL) {
-        if (count == index)
-            return (current->Value);
-        count++;
-        current = current->Next;
-    }
-    assert(0);
 }
