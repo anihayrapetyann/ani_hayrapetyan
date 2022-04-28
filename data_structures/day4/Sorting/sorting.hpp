@@ -3,7 +3,7 @@
 
 #include "swap.hpp"
 
-int* BubbleSort(int arr1[], int size ){
+int* BubbleSort(int arr1[], int size ) {
 for (int  i = 0; i < size; i++){
         bool checkSwap = false;
         for (int j = 0; j < size - i - 1; j++) {
@@ -14,13 +14,13 @@ for (int  i = 0; i < size; i++){
                 checkSwap = true;
             }
         }
-        if(!checkSwap){
+        if(!checkSwap) {
             break;
         }
     }
     return arr1;
 }
-int* InsertionSort(int arr2[], int size){
+int* InsertionSort(int arr2[], int size) {
  for (int i = 1; i < size; i++ ) {
         for (int j = i; j  > 0; j--) {
             if (arr2[j] < arr2[j - 1]) {
@@ -39,38 +39,35 @@ int* Merge(int arr1[], int arr2[], int size1, int size2) {
 
     int* arr3 = new int [size1 + size2];
     int  k = 0;
-    while (temp1 < size1 && temp2 < size2){
-
-        while(temp1 < size1 && arr1[temp1] < arr2[temp2]){
+    while (temp1 < size1 && temp2 < size2) {
+        while (temp1 < size1 && arr1[temp1] < arr2[temp2]) {
             arr3[k] = arr1[temp1];
             temp1++;
             k++;
         }
-
-        while (temp2 < size2 && arr1[temp1] >= arr2[temp2]){
+        while (temp2 < size2 && arr1[temp1] >= arr2[temp2]) {
             arr3[k] = arr2[temp2];
             temp2++;
             k++;
         }
-        
     }
-    if(temp1 == size1){
-        for(int i = temp2; i < size2; i++){
+    if (temp1 == size1) {
+        for (int i = temp2; i < size2; i++) {
             arr3[k] = arr2[i];
             k++;
         }
-    } else {
-        for(int i = temp1; i < size1; i++){
+    } 
+    else {
+        for (int i = temp1; i < size1; i++) {
             arr3[k] = arr1[i];
             k++;
         }
     }
     return arr3;
-
 }
 
 
-int* MergeSort(int* arr, int size){
+int* MergeSort(int* arr, int size) {
     if (size == 1) {
         return arr;
     }
@@ -119,7 +116,5 @@ void QuickSort(int arr[], int start, int end) {
 	QuickSort(arr, start, p - 1);
 	QuickSort(arr, p + 1, end);
 }
-
-
 
 #endif 
