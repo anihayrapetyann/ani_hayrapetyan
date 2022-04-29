@@ -66,7 +66,6 @@ int* Merge(int arr1[], int arr2[], int size1, int size2) {
     return arr3;
 }
 
-
 int* MergeSort(int* arr, int size) {
     if (size == 1) {
         return arr;
@@ -94,7 +93,7 @@ int Partition(int arr[], int start, int end) {
 	}
 	int pivotIndex = start + count;
 	Swap(arr, pivotIndex, start);
-    int i = start, j = end;
+	int i = start, j = end;
 	while (i < pivotIndex && j > pivotIndex) {
 		while (arr[i] <= pivot) {
 			i++;
