@@ -14,6 +14,9 @@ int main() {
     instance->insert(3);
 
     instance->PrintByAscendingOrder();
+    instance->removeNode(instance->_root, 20);
+    instance->PrintByAscendingOrder();
+
     cout << endl;
     return 0;
 }

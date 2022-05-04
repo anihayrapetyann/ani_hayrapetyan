@@ -13,7 +13,11 @@ public:
     Tree(int value);
     Tree();
     Node *insert (int data);
+    Node* getRightMin(Node* root);
+    Node* FindValue(Node *root, int value);
+    Node* removeNode (Node* root, int val);
     void PrintByAscendingOrder();
+
 private:
     void PrintByAscendingOrder(Node* root);
     Node *insert (Node *& root, int data);
@@ -60,4 +64,52 @@ Node* Tree::insert (Node *& root, int data) {
     }
 }
    
+Node* Tree::getRightMin(Node *root) {
+    Node *temp = root;
+    while(temp->_left != NULL){ temp = temp->_left;}
+    return temp;
+}
+
+Node* Tree::FindValue(Node *root, int value) {
+    if (root == NULL) 
+        return root;
+	while(root != NULL) {
+		if(root->_data == value) {
+			return root;
+		}
+		else if(root->_data > value)
+			root = root->_left;
+		else
+			root = root->_right;
+	}
+	return root;
+}
+
+Node* Tree::removeNode (Node* root, int val) {
+    if(root == NULL)
+        return NULL;
+    if(root->_data < val)
+        root->_right = removeNode(root->_right,val);
+    else if(root->_data > val)
+        root->_left = removeNode(root->_left,val);
+    else {
+        if(root->_left == NULL && root->_right == NULL) {
+            root = NULL;
+        }
+        else if(root->_left == NULL) {
+                root = root->_right;
+        }
+        else if(root->_right == NULL) {
+                root = root->_left;
+        }
+        else { 
+            Node* temp = getRightMin(root->_right);
+            temp = root->_right;  
+            root->_data = temp->_data;
+            root->_right= removeNode(root->_right, temp->_data);
+        }
+    }
+    return root;
+}
+
 #endif // __BSTREE_H__
