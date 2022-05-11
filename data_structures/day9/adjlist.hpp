@@ -85,6 +85,10 @@ void Graph::RemoveEdge(int index, int node) {
     if (!isEdgeExist(index, node)) {
         cout << "The edge that you want to delete doesn't exist " << endl;
     } 
+    Node* temp = _array[index]._head;
+    if (temp->_data == node) {
+        _array[index]._head = _array[index]._head->_next;
+    }
     else {
         Node* prev = _array[index]._head;
         while (prev->_next->_data != node) {
