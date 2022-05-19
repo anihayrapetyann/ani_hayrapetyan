@@ -35,7 +35,7 @@ public:
     unsigned hash( char* s);
     void insert (string _key, int data);
     void Display();
-    void search(string _key);
+    int search(string _key);
     void Delete(string _key);
 };
 
@@ -57,10 +57,9 @@ void HashTable::insert(string _key, int data) {
         node->next = table[index].head;
         table[index].head = node;
     }
-
 }
 
-void HashTable::search(string _key) {
+int HashTable::search(string _key) {
     int index = hashFunction(_key);
     if (table[index].head == NULL) {
         cout << "Your search returned no result " << endl;
@@ -69,11 +68,12 @@ void HashTable::search(string _key) {
     Node* newNode = table[index].head;
         while (newNode ) {
             if (newNode->key == _key ) {          
-                cout <<newNode->value << " ";
+                return newNode->value;
             }
                 newNode = newNode->next;
         }
     }
+    return -1;
 }
 
 void HashTable::Delete(string _key) {
@@ -109,7 +109,6 @@ void HashTable::Display() {
 int HashTable::hashFunction(string _key) {
      unsigned index = 23;
      for (int i = 0; i < _key.size(); i++) {
-        cout<< _key[i] << " ";
         index = (index * 'A') ^ (_key[i] * 'B');
     }
    return index % bucket; 

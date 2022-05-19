@@ -5,7 +5,7 @@ int main() {
      string name = "John";
      table1->insert(name, 256);
      table1->Display();
-     table1->search(name);
+     cout << table1->search("jo") << endl;
      table1->Delete(name);
      table1->Display();
     
