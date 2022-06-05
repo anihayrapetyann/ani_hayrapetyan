@@ -1,0 +1,18 @@
+//Query 1
+db.School_Info.find()
+
+//Query 2
+db.School_Info.find({},{"Name":1,"Address":1})
+
+//Query 3
+db.School_Info.find({},{"NumberOfPupils":1}).sort({"NumberOfPupils":1})
+
+//Query 4
+db.School_Info.find({Status: "High"},{"_id":0})
+
+//Query 5
+db.School_Info.find({Status: "Secondary"}).limit(3)
+
+//Query 6
+db.School_Info.createIndex({ location: "2dsphere"})
+db.School_Info.find({location:{$near:{$geometry:{type:"Point", coordinates:[ -122.467001, 37.773362 ]}}}})
