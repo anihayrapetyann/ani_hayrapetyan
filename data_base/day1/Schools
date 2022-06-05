@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "629b66bdbcc52fbd3e66e325"
+  },
+  "Name": "School N12",
+  "NameAfter": "Vitali Jhangiryan",
+  "Address": "Mesrop Mashtots 12",
+  "NumberOfPupils": "186",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      39.833983,
+      46.761234
+    ]
+  },
+  "Status": "High"
+},{
+  "_id": {
+    "$oid": "629b66bdbcc52fbd3e66e326"
+  },
+  "Name": "School N1",
+  "NameAfter": "Xachatur Abovyan",
+  "Address": "Knunyantsneri 48",
+  "NumberOfPupils": "400",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      39.820556,
+      46.756121
+    ]
+  },
+  "Status": "Secondary"
+},{
+  "_id": {
+    "$oid": "629b66bdbcc52fbd3e66e327"
+  },
+  "Name": "School N2",
+  "NameAfter": "Ashot Ghulyan",
+  "Address": "Mkhitar Gosh 7",
+  "NumberOfPupils": "350",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      39.814365,
+      46.769875
+    ]
+  },
+  "Status": "Secondary"
+},{
+  "_id": {
+    "$oid": "629b66bdbcc52fbd3e66e328"
+  },
+  "Name": "School N3",
+  "NameAfter": "Aleksandr Griboyedov",
+  "Address": "Azatamartikneri 2",
+  "NumberOfPupils": "248",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      39.821012,
+      46.754167
+    ]
+  },
+  "Status": "Primary"
+}]
