@@ -1,0 +1,123 @@
+body{
+    background-color: rgb(200, 223, 230);
+}
+.myDiv {
+    width : 800px;
+    height: 1400px; 
+    background-color:  rgb(200, 223, 230);
+    margin:auto; margin-top: 50px; margin-bottom: 50px;
+}
+.myDiv img{
+    height: 280px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.myDiv .text {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.5cm;   
+}
+
+.myDiv .text p{
+    line-height: 0.005;
+    color: rgb(60, 61, 61);
+}
+
+.myDiv .text #subheader1 {
+    color: rgb(60, 61, 61);    
+}
+
+.part2 {
+    width : 800px;
+    height: 200px; 
+    background-color: white;   
+    margin:auto; margin-top: 20px; margin-bottom: 20px;
+    border-radius: 30px;
+    padding: 0.001cm;
+    }
+
+.part2 ol {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgb(83, 80, 80);
+}
+
+h3 {
+    padding-top: 0.5cm;
+    padding-bottom: 0.1;
+    padding-left: 0.6cm;
+    line-height: 0.005;
+}
+
+.part3 {
+    width : 800px;
+    height: 250px; 
+    background-color: white;   
+    margin:auto; margin-top: 20px; margin-bottom: 20px;
+    border-radius: 30px;
+    padding: 0.001cm;
+    }
+
+.part3 table th, td{
+    padding-left: 0.5cm;
+    padding-right: 3.5cm;
+    line-height: 0.8cm;
+}
+
+.part3 table td {
+    color: rgb(83, 83, 83);
+    padding-left: 0.5cm;
+    padding-right: 1cm;
+    line-height: 0.8cm;
+}
+
+.part4 {
+    width : 800px;
+    height: 250px; 
+    background-color: white;   
+    margin:auto; margin-top: 20px; margin-bottom: 20px;
+    border-radius: 30px;
+    padding: 0.001cm;
+    }
+
+.part4 p{
+    padding-left: 0.5cm;
+    line-height: 0.02cm;
+}
+
+.part4 h3 {
+    padding-bottom: 0.3cm;
+}
+
+.myDiv button{
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16;
+    position:relative;
+    left: 2%;
+    margin-top: 10%;
+}
+
+.myDiv #contact {
+    padding-top: 15px;
+    position:relative;
+    left: 42%;
+}
+.myDiv span {
+    padding-left: 30px;
+}
+
+.myDiv input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    background-color:rgb(200, 223, 230);
+    line-height: 30px;  
+}
+
+.myDiv label{
+    color:rgb(92, 89, 89);
+}
