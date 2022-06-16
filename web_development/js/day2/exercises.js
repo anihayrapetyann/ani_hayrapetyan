@@ -5,11 +5,7 @@
 const input = prompt("Enter the text");
 function toUppercase(input) {
     const splited = input.split(" ");
-    const firstWord = splited[0].toUpperCase();
-    splited.shift();
-    const rest = splited.join(' ');
-    const result = firstWord.concat(' ', rest);
-    return result;
+    return(splited[0].toUpperCase() + " " + splited.slice(1).join(" "));
 }
 console.log(toUppercase(input));
 
@@ -17,19 +13,24 @@ console.log(toUppercase(input));
 
 function DivideArray(arr, size) {
     const subArrays = [];
-    for (let i = 0; i < arr.length; i += size) {
-        subArrays.push(arr.slice(i, i + size))
+    if (size == 0) {
+        return arr;
     }
-    return subArrays;
+    else {
+        for (let i = 0; i < arr.length; i += size) {
+            subArrays.push(arr.slice(i, i + size))
+        }
+        return subArrays;
+    }
 }
-console.log(DivideArray([1, 2, 3, 4, 5, 6, 7, 8], 3));
+console.log(DivideArray([1, 2, 3, 4, 5, 6, 7, 8], 0));
 
 //-----------------ex.3--------------
 
 function sumOfValues(object) {
     let sum = 0;
     for (const [key, value] of Object.entries(object)) {
-        if(!isNaN(value)){
+        if(typeof value == 'number'){
             sum+= value;
         }
     }
@@ -37,12 +38,12 @@ function sumOfValues(object) {
 }
 
 const object = {
-    sum:"Hello", 
+    text:"Hello", 
     b:10, 
-    a:"World!", 
+    text2:"World!", 
     c:20
 }
-console.log(sumOfValues(object));
+console.log(sumOfValues({text: 'Hello', b: '10', text2: "World!", c: 20}));
 
 //----------- ex.4 -----------
 
@@ -64,12 +65,7 @@ function sum (arr) {
     let posSum = 0;
     let negSum = 0;
     for (const el of arr) {
-        if(el > 0){
-            posSum+=el;
-        }
-        else {
-            negSum+=el;
-        }
+        (el > 0) ? posSum += el : negSum += el;
     }
     const result = {
         positive: posSum,
@@ -89,15 +85,9 @@ const data = [
     { id: 5, name: 'Name one', city: 'Yerevan' },
 ];
 
-const arr = [];
-function GetUniqueCities (cities) {
-    for (let i = 0; i < cities.length; i++) {
-        arr.push(cities[i].city);
-    }
-    const Array = [...new Set(arr)];
-    return Array;
-}
-console.log(GetUniqueCities(data));
+const  GetUniqueCities = data.map((el) => {return el.city}) 
+const result = [...new Set(GetUniqueCities)];    
+console.log(result);
 
 //---------------ex.7---------------
 
