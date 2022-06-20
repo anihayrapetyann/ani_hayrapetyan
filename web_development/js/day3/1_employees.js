@@ -7,13 +7,12 @@ const newArray = newEmployeedata.map(obj => ({name:obj.name, position:obj.hr.pos
 console.log(newArray);
 
 // -----------------------ex.2 Creating a new array with salaries higher than 150 000$--------------------------------
-const filterBySalary = newEmployeedata.filter(obj => Number(obj.hr.salary.replace(/[^\d\.\-]/g, '') >= 150000));
+const filterBySalary = newEmployeedata.filter(obj => Number(obj.hr.salary.replace(/[^\d]/g, '') >= 150000));
 console.log(filterBySalary);
 
 // ------------------------------ex.3 - Find the earliest employee; ( new Date() )-----------------------------------
 const startDate = newEmployeedata.sort((b, a) => (new Date(b.hr.start_date) - new Date(a.hr.start_date)))[0].name;
 console.log("The earliest employee is ", startDate);
-
 
 //----------------------------ex.4-Get the list of employees, whose salary is <=100 000 and add "bonus" property, which value = 20% of salary.
 //  [{ name,
@@ -29,8 +28,10 @@ console.log("The earliest employee is ", startDate);
 //  ]
 
 const filterByLowSalary = newEmployeedata.filter(obj => Number(obj.hr.salary.replace(/[^\d\.\-]/g, '') <= 100000));
-const bonus =filterByLowSalary.map(obj => ({...obj, ...obj.hr, bonus:Number(obj.hr.salary.replace(/[^\d\.\-]/g, '')) / 5}));
-console.log(bonus);
+filterByLowSalary.forEach((obj) => {
+    obj.hr.bonus = Number(obj.hr.salary.replace(/[^\d]/g, '')) / 5;
+});
+console.log(filterByLowSalary);
 
 // -------------------------ex.5 Get the number of employees by cities----------------------------------------------
 //    {
@@ -39,24 +40,29 @@ console.log(bonus);
 //       sanFrancisco: 14,
 //       ...
 //    }
-
-const countByCities = newEmployeedata.reduce((counter, obj) => ((counter[obj.contact[0]] = counter[obj.contact[0]] ? counter[obj.contact[0]] += 1 : 1), counter), {});
-console.log(countByCities);
+const allCities= newEmployeedata.map(obj => obj.contact[0]);
+const count = {};
+allCities.forEach (element => {
+    if(count[element])
+    count[element]++;
+    else
+    count [element] = 1;
+    return count;
+})
+console.log(count);
 
 //-----------------------------------------------ex.6----------------------------------------------
-
 //-------------------a) Print the  "Please wait" text, and wait for 3 seconds.---------------------
-console.log("Please wait");
-
 //------------------------------b)print an array with all employees---------------------------------
-const allEmployees = newEmployeedata.map(obj=>obj.name);
-setTimeout(() => {console.log("The list of employees\n", allEmployees)},3000);
-
 //-----------------------c)randomly select an employee and remove from the array---------------------
-const randomIndex = Math.floor(Math.random() * allEmployees.length);
-const item = allEmployees[randomIndex];
-setTimeout(() => { console.log( item, " you are fired from your job"); }, 4000);
-
 //---------------------------------d)Print a new list of employees----------------------------------
-setTimeout(() => { allEmployees.splice(randomIndex, 1); }, 5000);
-setTimeout(() => { console.log("new list of employees\n\n", allEmployees); }, 5000, "result");
+console.log("Please wait");
+setTimeout(() => {
+    const allEmployees = newEmployeedata.map(obj=>obj.name);
+    console.log("The list of employees\n", allEmployees);
+    const randomIndex = Math.floor(Math.random() * allEmployees.length);
+    const item = allEmployees[randomIndex];
+    console.log( item, " you are fired from your job");
+    allEmployees.splice(randomIndex, 1);
+    console.log("new list of employees\n\n", allEmployees)
+}, 3000);
