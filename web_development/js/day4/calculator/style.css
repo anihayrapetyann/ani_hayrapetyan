@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 209, 233);
+}
+
+.parentdiv {
+    width: 450px;
+    height: 450px;
+    border: 5px solid black;
+    background-color: rgba(206, 137, 206, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section1 {
+    width: 400px;
+    height: 70px;
+    border: 2px solid black;
+    background-color: aliceblue;
+
+}
+
+.section2 {
+    width: 400px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 35px;
+}
+
+::placeholder {
+    font-size: 18px;
+}
+
+input {
+    height: 60px;
+    width: 170px;
+    font-size: 30px;
+    border: 2px solid black;
+    background-color: aliceblue;
+    text-align: center;
+  
+}
+
+.section3 {
+    width: 400px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 35px;
+}
+
+div.section3 > button {
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    font-size: 35px;
+}
+
+.section4 {
+    width: 400px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section4 > button {
+    width: 400px;
+    height: 70px;
+    border: 2px solid black;
+    font-size: 35px;
+}
+
+button:hover {
+    background-color:wheat;
+}

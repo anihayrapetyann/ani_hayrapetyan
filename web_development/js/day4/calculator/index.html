@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="parentdiv" >
+            <div class="section1">
+                <h1 id = result> </h1>
+            </div>
+            <div class="section2">
+                <div>
+                    <input id="element1" type = "number" name="numberInput"  placeholder="Type the number">
+                </div>
+                <div id="operation">+</div>
+                <div>
+                    <input id="element2" type = "number" name="numberInput"  placeholder="Type the number">
+                </div>
+            </div>
+            <div class="section3">
+                <button id="+" onclick="addFunction()"> + </button>
+                <button id="-" onclick="subtractFunction()"> - </button>
+                <button id="*" onclick="multiplyFunction()"> * </button>
+                <button id="/" onclick="devideFunction()"> / </button>
+            </div>
+            <div class="section4">
+                <button id = "reset" onclick="clearFunction()">RESET</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
