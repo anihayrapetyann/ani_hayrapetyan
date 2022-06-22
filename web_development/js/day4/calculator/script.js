@@ -43,6 +43,7 @@ function clearFunction() {
     document.getElementById("element1").value = "";
     document.getElementById("element2").value = "";
     document.getElementById("result").innerHTML = "";
+    document.getElementById('operation').innerHTML = "+";
 }
 
 document.addEventListener('keydown', function(event){
