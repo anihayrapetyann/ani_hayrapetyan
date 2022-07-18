@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.userslist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    border: 3px solid black;
+    width: 600px;
+    border-radius: 10px;
+    background-color: rgb(202, 219, 124);
+}
+ol {
+    line-height: 50px;
+}
+h1 {
+    color:rgb(4, 54, 35)
+}
+#user, #li {
+    text-decoration: none;
+    color: rgb(77, 59, 26);
+    font-size: 28px;
+    /* border: 2px solid black; */
+}
+
