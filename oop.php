@@ -64,5 +64,27 @@ class Iphone extends Phone {
 }
     $iphone = new Iphone("iphone 14 pro", "1500$", "black");
     $iphone->verifyPasswordLength("abcdef");
+
+//Traits
+
+Trait Hello {
+	public function sayHello() {
+		echo "Hello ";
+	}
+}
+
+Trait World {
+	public function SayWorld() {
+		echo "World";
+	}
+}
+
+class Greeting {
+	use Hello, World;
+}
+
+ $greeting = new Greeting();
+ $greeting-> sayHello();
+ $greeting->sayWorld();
     
 ?>
