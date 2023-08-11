@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #edeff2;
+}
+.color{
+    color: red;
+}
+.submit{
+    background-color: #0c5460;
+    color: #edeff2;
+    font-weight: bold;
+    margin-left: 60px;
+    width: 70px;
+    height: 30px;
+    border-radius: 10%;
+}
+label{
+    color: #0c5460;
+}
+
+.input{
+    width: 200px;
+    height: 25px;
+
+}
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.welcome {
+    background-color: #edeff2;
+    color: #0c5460;
+    font-weight: bolder;
+}
+h3, h1 {
+    font-weight: bolder;
+    color: #0f6674;
+}
