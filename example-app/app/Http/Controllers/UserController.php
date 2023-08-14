@@ -18,9 +18,8 @@ class UserController extends Controller
         $user->phone_number = $request->phone;
         $user->password = $request->password;
         $user->save();
-        $userName = $request->uname;
 
-        return view('welcome', ['name'=>$userName]);
+        return view('welcome', ['name'=>$request->uname]);
 
     }
 
