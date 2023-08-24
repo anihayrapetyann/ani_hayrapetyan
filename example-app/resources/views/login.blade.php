@@ -29,9 +29,10 @@
             <input  class="input" type="password" id="psswrd" name="password" placeholder="Type your password"><br><br>
             <label for="phone">Phone Number:</label><br>
             <input  class="input" type="text" id="phone" name="phone" placeholder="Type your phone number"><br><br><br>
-            <input class="submit" type="submit" value="Login">
-
+            <input name="submit" class="submit" type="submit" value="Login"><br><br>
+            <input  name="allUsers" class="allUsers" type="submit" value="View all users">
         </form>
+
     </div>
 
 

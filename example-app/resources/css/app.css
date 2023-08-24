@@ -15,6 +15,17 @@ body{
     height: 30px;
     border-radius: 10%;
 }
+
+.allUsers{
+    background-color: #0c5460;
+    color: #edeff2;
+    font-weight: bold;
+    margin-left: 36px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10%;
+}
+
 label{
     color: #0c5460;
 }
@@ -40,4 +51,14 @@ div {
 h3, h1 {
     font-weight: bolder;
     color: #0f6674;
+}
+
+
+
+ol li {
+    background: whitesmoke;
+    font-weight: bold;
+    color: #3d4852;
+    padding: 5px;
+    margin-left: 35px;
 }

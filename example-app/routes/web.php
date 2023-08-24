@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::post('/users', [\App\Http\Controllers\UserController::class, 'addUser']);
 
+Route::get('localization/{locale}', [\App\Http\Controllers\LocalizationController::class, 'index']);
 
